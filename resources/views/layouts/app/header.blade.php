@@ -34,7 +34,7 @@
                     <laraliveui:navbar.item
                         class="h-10 max-lg:hidden [&>div>svg]:size-5"
                         icon="book-open"
-                        href="https://github.com/elnasnato/laraliveui"
+href="https://elnasnato.github.io/laraliveui-docs/"
                         target="_blank"
                         :label="__('Documentation')"
                     />

@@ -25,7 +25,7 @@
                     {{ __('Repository') }}
                 </laraliveui:sidebar.item>
 
-                <laraliveui:sidebar.item icon="book-open" href="https://github.com/elnasnato/laraliveui" target="_blank">
+                <laraliveui:sidebar.item icon="book-open" href="https://elnasnato.github.io/laraliveui-docs/" target="_blank">
                     {{ __('Documentation') }}
                 </laraliveui:sidebar.item>
             </laraliveui:sidebar.nav>
