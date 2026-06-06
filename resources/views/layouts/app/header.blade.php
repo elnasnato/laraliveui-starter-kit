@@ -10,7 +10,7 @@
             <x-app-logo href="{{ route('dashboard') }}" wire:navigate />
 
             <laraliveui:navbar class="-mb-px max-lg:hidden">
-                <laraliveui:navbar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                <laraliveui:navbar.item icon="squares-2x2" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                     {{ __('Dashboard') }}
                 </laraliveui:navbar.item>
             </laraliveui:navbar>
@@ -24,8 +24,8 @@
                 <laraliveui:tooltip :content="__('Repository')" position="bottom">
                     <laraliveui:navbar.item
                         class="h-10 max-lg:hidden [&>div>svg]:size-5"
-                        icon="folder-git-2"
-                        href="https://github.com/laravel/livewire-starter-kit"
+                        icon="folder-open"
+                        href="https://github.com/elnasnato/laraliveui-starter-kit"
                         target="_blank"
                         :label="__('Repository')"
                     />
@@ -33,8 +33,8 @@
                 <laraliveui:tooltip :content="__('Documentation')" position="bottom">
                     <laraliveui:navbar.item
                         class="h-10 max-lg:hidden [&>div>svg]:size-5"
-                        icon="book-open-text"
-                        href="https://laravel.com/docs/starter-kits#livewire"
+                        icon="book-open"
+                        href="https://github.com/elnasnato/laraliveui"
                         target="_blank"
                         :label="__('Documentation')"
                     />
@@ -53,7 +53,7 @@
 
             <laraliveui:sidebar.nav>
                 <laraliveui:sidebar.group :heading="__('Platform')">
-                    <laraliveui:sidebar.item icon="layout-grid" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
+                    <laraliveui:sidebar.item icon="squares-2x2" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard')  }}
                     </laraliveui:sidebar.item>
                 </laraliveui:sidebar.group>
@@ -62,10 +62,10 @@
             <laraliveui:spacer />
 
             <laraliveui:sidebar.nav>
-                <laraliveui:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
+                <laraliveui:sidebar.item icon="folder-open" href="https://github.com/elnasnato/laraliveui-starter-kit" target="_blank">
                     {{ __('Repository') }}
                 </laraliveui:sidebar.item>
-                <laraliveui:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
+                <laraliveui:sidebar.item icon="book-open" href="https://github.com/elnasnato/laraliveui" target="_blank">
                     {{ __('Documentation') }}
                 </laraliveui:sidebar.item>
             </laraliveui:sidebar.nav>

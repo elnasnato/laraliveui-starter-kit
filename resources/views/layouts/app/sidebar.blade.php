@@ -21,11 +21,11 @@
             <laraliveui:spacer />
 
             <laraliveui:sidebar.nav>
-                <laraliveui:sidebar.item icon="folder-git-2" href="https://github.com/laravel/livewire-starter-kit" target="_blank">
+                <laraliveui:sidebar.item icon="folder-open" href="https://github.com/elnasnato/laraliveui-starter-kit" target="_blank">
                     {{ __('Repository') }}
                 </laraliveui:sidebar.item>
 
-                <laraliveui:sidebar.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire" target="_blank">
+                <laraliveui:sidebar.item icon="book-open" href="https://github.com/elnasnato/laraliveui" target="_blank">
                     {{ __('Documentation') }}
                 </laraliveui:sidebar.item>
             </laraliveui:sidebar.nav>
