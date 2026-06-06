@@ -1,9 +1,9 @@
 @import 'tailwindcss';
-@import '../../vendor/laralive/laraliveui/dist/laraliveui.css';
+@import '../../vendor/elnasnato/laraliveui/dist/laraliveui.css';
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../vendor/laralive/laraliveui/stubs/**/*.blade.php';
+@source '../../vendor/elnasnato/laraliveui/stubs/**/*.blade.php';
 
 @custom-variant dark (&:where(.dark, .dark *));
 

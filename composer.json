@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laralive/laraliveui-starter-kit",
+    "name": "elnasnato/laraliveui-starter-kit",
     "type": "project",
     "description": "The official Laravel starter kit for LaraLiveUI.",
     "keywords": [
@@ -14,7 +14,7 @@
         "laravel/fortify": "^1.37.2",
         "laravel/framework": "^13.7",
         "laravel/tinker": "^3.0",
-        "laralive/laraliveui": "^0.1.0",
+        "elnasnato/laraliveui": "^0.1.0",
         "livewire/livewire": "^4.1"
     },
     "require-dev": {
