@@ -7,25 +7,17 @@ use Laravel\Chisel\Chisel;
 use Laravel\Chisel\Question;
 use Laravel\Chisel\Script;
 use RuntimeException;
+use Symfony\Component\Process\Process;
 
 use function Laravel\Prompts\multiselect;
 use function Laravel\Prompts\spin;
+use function Laravel\Prompts\warning;
 
 class InstallFeaturesCommand extends Command
 {
-    /**
-     * The name and signature of the console command.
-     *
-     * @var string
-     */
     protected $signature = 'install:features
         {--answers= : JSON string of answers to skip interactive prompts}';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Choose which starter kit features to keep';
 
     public function handle(): int
@@ -83,8 +75,21 @@ class InstallFeaturesCommand extends Command
         );
     }
 
+    protected function npmAvailable(): bool
+    {
+        $process = Process::fromShellCommandline('command -v npm 2>/dev/null');
+
+        return $process->run() === 0;
+    }
+
     protected function installNodeDependencies(): void
     {
+        if (! $this->npmAvailable()) {
+            warning('Node.js/npm is not available. Skipping asset installation. Run "npm install && npm run build" manually later.');
+
+            return;
+        }
+
         $npm = Chisel::in(base_path())->npm();
         $packageManager = $npm->packageManager();
 
@@ -96,6 +101,10 @@ class InstallFeaturesCommand extends Command
 
     protected function buildAssets(): void
     {
+        if (! $this->npmAvailable()) {
+            return;
+        }
+
         $npm = Chisel::in(base_path())->npm();
 
         spin(
