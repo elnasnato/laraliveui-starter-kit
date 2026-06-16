@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33ecf269ffa047320c6899604a53e200",
+    "content-hash": "186474d6af7eec219661012955956315",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -663,11 +663,17 @@
         },
         {
             "name": "elnasnato/laraliveui",
-            "version": "dev-main",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elnasnato/laraliveui.git",
+                "reference": "dc35499f5b438bbba76e2ebe93be66404ac75fcd"
+            },
             "dist": {
-                "type": "path",
-                "url": "/home/enzy/Project/laraliveui",
-                "reference": "bebddf51c5a323bcafbc5af73f4fe4c14224eb24"
+                "type": "zip",
+                "url": "https://api.github.com/repos/elnasnato/laraliveui/zipball/dc35499f5b438bbba76e2ebe93be66404ac75fcd",
+                "reference": "dc35499f5b438bbba76e2ebe93be66404ac75fcd",
+                "shasum": ""
             },
             "require": {
                 "illuminate/console": "^10.0|^11.0|^12.0|^13.0",
@@ -681,12 +687,12 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "Laraliveui\\LaraliveuiServiceProvider"
-                    ],
                     "aliases": {
                         "Laraliveui": "Laraliveui\\Laraliveui"
-                    }
+                    },
+                    "providers": [
+                        "Laraliveui\\LaraliveuiServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -694,6 +700,7 @@
                     "Laraliveui\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -712,19 +719,21 @@
                 "livewire",
                 "ui"
             ],
+            "support": {
+                "issues": "https://github.com/elnasnato/laraliveui/issues",
+                "source": "https://github.com/elnasnato/laraliveui/tree/v2.0.0"
+            },
             "funding": [
                 {
-                    "type": "github",
-                    "url": "https://github.com/sponsors/elnasnato"
+                    "url": "https://github.com/sponsors/elnasnato",
+                    "type": "github"
                 },
                 {
-                    "type": "paypal",
-                    "url": "https://paypal.me/CrunchyNatto"
+                    "url": "https://paypal.me/CrunchyNatto",
+                    "type": "paypal"
                 }
             ],
-            "transport-options": {
-                "relative": false
-            }
+            "time": "2026-06-16T05:00:49+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -9998,9 +10007,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "elnasnato/laraliveui": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
