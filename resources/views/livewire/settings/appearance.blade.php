@@ -1,0 +1,21 @@
+<?php
+
+use Livewire\Component;
+
+new class extends Component {
+    //
+}; ?>
+
+<section class="w-full">
+    @include('partials.settings-heading')
+
+    <laraliveui:heading class="sr-only">{{ __('Appearance Settings') }}</laraliveui:heading>
+
+    <x-settings.layout :heading="__('Appearance')" :subheading="__('Update the appearance settings for your account')">
+        <laraliveui:radio.group x-data variant="segmented" x-model="$laraliveui.appearance">
+            <laraliveui:radio value="light" icon="sun">{{ __('Light') }}</laraliveui:radio>
+            <laraliveui:radio value="dark" icon="moon">{{ __('Dark') }}</laraliveui:radio>
+            <laraliveui:radio value="system" icon="computer-desktop">{{ __('System') }}</laraliveui:radio>
+        </laraliveui:radio.group>
+    </x-settings.layout>
+</section>

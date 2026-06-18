@@ -36,12 +36,7 @@
 }
 
 @layer base {
-
-    *,
-    ::after,
-    ::before,
-    ::backdrop,
-    ::file-selector-button {
+    *, ::after, ::before, ::backdrop, ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
 }
@@ -51,7 +46,7 @@
 }
 
 [data-laraliveui-label] {
-    @apply  !mb-0 !leading-tight;
+    @apply !mb-0 !leading-tight;
 }
 
 input:focus[data-laraliveui-control],

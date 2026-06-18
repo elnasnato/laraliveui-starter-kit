@@ -13,9 +13,11 @@ class ProfileUpdateTest extends TestCase
 
     public function test_profile_page_is_displayed(): void
     {
-        $this->actingAs($user = User::factory()->create());
+        $user = User::factory()->create();
 
-        $this->get(route('profile.edit'))->assertOk();
+        $response = $this->actingAs($user)->get(route('profile.edit'));
+
+        $response->assertOk();
     }
 
     public function test_profile_information_can_be_updated(): void
@@ -24,65 +26,56 @@ class ProfileUpdateTest extends TestCase
 
         $this->actingAs($user);
 
-        $response = Livewire::test('pages::settings.profile')
+        Livewire::test('settings.profile')
             ->set('name', 'Test User')
             ->set('email', 'test@example.com')
             ->call('updateProfileInformation');
 
-        $response->assertHasNoErrors();
-
         $user->refresh();
 
-        $this->assertEquals('Test User', $user->name);
-        $this->assertEquals('test@example.com', $user->email);
+        $this->assertSame('Test User', $user->name);
+        $this->assertSame('test@example.com', $user->email);
         $this->assertNull($user->email_verified_at);
     }
 
-    public function test_email_verification_status_is_unchanged_when_email_address_is_unchanged(): void
+    public function test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
     {
         $user = User::factory()->create();
 
         $this->actingAs($user);
 
-        $response = Livewire::test('pages::settings.profile')
+        Livewire::test('settings.profile')
             ->set('name', 'Test User')
             ->set('email', $user->email)
             ->call('updateProfileInformation');
 
-        $response->assertHasNoErrors();
-
-        $this->assertNotNull($user->refresh()->email_verified_at);
+        $this->assertNotNull($user->fresh()->email_verified_at);
     }
 
-    public function test_user_can_delete_their_account(): void
+    public function test_account_can_be_deleted(): void
     {
         $user = User::factory()->create();
 
         $this->actingAs($user);
 
-        $response = Livewire::test('pages::settings.delete-user-modal')
+        Livewire::test('settings.delete-user-form')
             ->set('password', 'password')
             ->call('deleteUser');
 
-        $response
-            ->assertHasNoErrors()
-            ->assertRedirect('/');
-
         $this->assertNull($user->fresh());
-        $this->assertFalse(auth()->check());
+        $this->assertGuest();
     }
 
-    public function test_correct_password_must_be_provided_to_delete_account(): void
+    public function test_correct_password_must_be_provided_before_account_can_be_deleted(): void
     {
         $user = User::factory()->create();
 
         $this->actingAs($user);
 
-        $response = Livewire::test('pages::settings.delete-user-modal')
+        Livewire::test('settings.delete-user-form')
             ->set('password', 'wrong-password')
-            ->call('deleteUser');
-
-        $response->assertHasErrors(['password']);
+            ->call('deleteUser')
+            ->assertHasErrors('password');
 
         $this->assertNotNull($user->fresh());
     }

@@ -1,3 +1,5 @@
-{
-    "preset": "laravel"
-}
+<?php
+
+return [
+    'preset' => 'laravel',
+];
