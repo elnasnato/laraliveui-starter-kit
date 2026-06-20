@@ -27,5 +27,5 @@ return [
             'lock_connection' => env('REDIS_CACHE_LOCK_CONNECTION', 'default'),
         ],
     ],
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
+    'prefix' => env('CACHE_PREFIX', \Illuminate\Support\Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
 ];
