@@ -23,6 +23,4 @@
 
 /.github export-ignore
 /CHANGELOG.md export-ignore
-/phpunit.xml export-ignore
 /pint.json export-ignore
-/tests export-ignore
