@@ -74,6 +74,9 @@
     },
     "extra": {
         "laravel": {
+            "installer": {
+                "post-create-project": []
+            },
             "dont-discover": []
         }
     },
