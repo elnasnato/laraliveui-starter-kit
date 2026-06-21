@@ -14,18 +14,18 @@ new #[Layout('components.layouts.app')] class extends Component {
 
     <x-settings.layout :heading="__('Appearance')" :subheading="__('Update the appearance settings for your account')">
         <laraliveui:radio.group variant="pills" x-model="$laraliveui.appearance">
-            <laraliveui:radio.pills value="light">
+            <laraliveui:radio value="light">
                 <laraliveui:icon icon="sun" variant="mini" class="size-4 shrink-0" />
                 {{ __('Light') }}
-            </laraliveui:radio.pills>
-            <laraliveui:radio.pills value="dark">
+            </laraliveui:radio>
+            <laraliveui:radio value="dark">
                 <laraliveui:icon icon="moon" variant="mini" class="size-4 shrink-0" />
                 {{ __('Dark') }}
-            </laraliveui:radio.pills>
-            <laraliveui:radio.pills value="system">
+            </laraliveui:radio>
+            <laraliveui:radio value="system">
                 <laraliveui:icon icon="computer-desktop" variant="mini" class="size-4 shrink-0" />
                 {{ __('System') }}
-            </laraliveui:radio.pills>
+            </laraliveui:radio>
         </laraliveui:radio.group>
     </x-settings.layout>
 </section>
