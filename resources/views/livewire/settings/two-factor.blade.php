@@ -9,6 +9,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Locked;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Symfony\Component\HttpFoundation\Response;
 
 new #[Layout('components.layouts.app')] class extends Component {
     #[Locked]
